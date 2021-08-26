@@ -1,0 +1,24 @@
+<%- include('partials/header',{loggedIn:'false'}) %>
+
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+          <div class="container d-flex align-items-center flex-column">
+              <!-- Masthead Avatar Image-->
+              <img class="masthead-avatar mb-5" src="images/startingimage.png" alt="..." />
+              <!-- Masthead Heading-->
+              <h1 class="masthead-heading text-uppercase mb-0">Flight Hunter</h1>
+              <!-- Icon Divider-->
+              <div class="divider-custom divider-light">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                  <div class="divider-custom-line"></div>
+              </div>
+              <!-- Masthead Subheading-->
+              <p class="masthead-subheading font-weight-light mb-0">
+                  <a href="/login"><button class="btn login-btn btn-lg btn-outline-warning" type="button">Log in</button></a>
+                  <a href="/register"><button class="btn register-btn btn-lg btn-danger" type="button">Register</button></a>
+              </p>
+          </div>
+      </header>
+
+<%- include('partials/footer') %>

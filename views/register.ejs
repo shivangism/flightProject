@@ -1,0 +1,64 @@
+<%- include('partials/header',{loggedIn:'false'}) %>
+
+<section class="page-section" id="contact">
+  <div class="container">
+      <!-- Contact Section Heading-->
+      <br>
+      <br>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Register</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      <!-- Contact Section Form-->
+      <div class="row justify-content-center">
+          <div class="col-lg-8 col-xl-7">
+
+              <form id="contactForm"  action="/register" method="POST" >
+                  <!-- Name input-->
+                  <div class="form-floating mb-3">
+                      <input class="form-control" id="name"  name="name" type="text" placeholder="Enter your name..." required />
+                      <label for="name">Full name</label>
+                  </div>
+
+                  <!-- Email address input-->
+                  <div class="form-floating mb-3">
+                      <input class="form-control" id="email"  name="username" type="email" placeholder="name@example.com" required/>
+                      <label for="email">Email address</label>
+                  </div>
+                  <!-- Phone number input-->
+                  <div class="form-floating mb-3">
+                      <input class="form-control" id="password"  name="password" type="password" placeholder="**********"  required/>
+                      <label for="password">Password</label>
+                  </div>
+
+                   <!-- Submit Button-->
+                  <button class="btn btn-primary btn-xl " id="submitButton" type="submit">Send</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+    <!-- <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div> -->
+
+<%- include('partials/footer') %>

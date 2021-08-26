@@ -1,0 +1,69 @@
+
+<%- include('partials/header',{loggedIn:'true'}) %>
+
+<section class="page-section portfolio" id="portfolio">
+  <div class="container">
+      <!-- Portfolio Section Heading-->
+      <br><br>
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Your Targets</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
+      <!-- Portfolio Grid Items-->
+      <div class="row justify-content-center">
+          <!-- Portfolio Item 1-->
+          <%for( var i=0;i<user.flight_ids.length;i++){%>
+            <div class="col-md-6 col-lg-4 mb-5">
+              <div class="portfolio-item mx-auto">
+                  <a href='/delete/<%=user.flight_ids[i]._id%>'>
+                  <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                      <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-trash-alt fa-3x"></i></div>
+                  </div>
+              </a>
+                  <!-- <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." /> -->
+                  <div class="col-md-12">
+                      <div style="text-align: center;" class=" p-5 text-white bg-dark rounded-3">
+                        <h2 class="qq"><%=user.flight_ids[i].from%> <i  class="fas fa-plane "></i> <%=user.flight_ids[i].to%> </h2>
+
+                      </div>
+                    </div>
+                  
+              </div>
+              
+          </div> 
+          <%}%>
+
+      </div>
+    
+  </div>
+</section>
+
+
+<% if(user.flight_ids.length<3){%>
+<div class="container add-form"  >
+  <h4>You can add <%=3-user.flight_ids.length%> more flights</h4>
+  <br>
+  <div class="row g-3 align-items-center">
+      <form action="/add" method="POST">
+      <div class="col-lg-6 col-s-12">
+          <label for="inputPassword6"  class="col-form-label"><h5>Departure From</h5></label>
+        <input type="text" name="from" id="inputPassword6" class="form-control"  >
+        
+      </div>
+     
+      <div class="col-lg-6 col-s-12" >
+          <label for="inputPassword6" class="col-form-label"><H5>Destination</H5></label>
+          <input type="text" name="to" id="inputPassword6" class="form-control" >
+        </div>
+        <button type="submit"  name="id" value="<%=user.id%>" class="btn btn-lg btn-outline-light">Add Flight</button>
+      </form>
+    </div>
+
+</div>
+<%}%>
+
+
+<%- include('partials/footer') %>
